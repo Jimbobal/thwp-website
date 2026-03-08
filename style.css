@@ -172,29 +172,42 @@ img {
   overflow: hidden;
 }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.hero-bg img {
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 100px 24px 40px;
+  gap: 40px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.4;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-  text-align: center;
-  padding: 0 24px;
+  text-align: left;
+  padding: 0;
+}
+
+.hero-image-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-puppet {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 50%;
+  border: 5px dashed var(--kraft);
+  box-shadow: 8px 8px 0 rgba(0,0,0,0.3);
+  animation: fadeInUp 1s ease 0.4s both;
 }
 
 .hero-logo {
-  width: clamp(200px, 40vw, 400px);
-  margin: 0 auto 16px;
+  width: clamp(200px, 30vw, 350px);
+  margin: 0 0 16px;
   filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5));
   animation: fadeInDown 1s ease;
 }
@@ -898,6 +911,24 @@ img {
 
   .discography-grid {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+  .hero-split {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 100px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-logo {
+    margin: 0 auto 16px;
+  }
+
+  .hero-puppet {
+    max-width: 260px;
   }
 
   .hero-cta {
