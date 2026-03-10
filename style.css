@@ -93,7 +93,6 @@ body:hover .cursor-glow {
   justify-content: space-between;
   padding: 24px clamp(24px, 5vw, 80px);
   transition: background 0.4s var(--ease), padding 0.4s var(--ease);
-  mix-blend-mode: difference;
 }
 
 #navbar.scrolled {
@@ -102,7 +101,6 @@ body:hover .cursor-glow {
   -webkit-backdrop-filter: blur(20px);
   padding-top: 16px;
   padding-bottom: 16px;
-  mix-blend-mode: normal;
 }
 
 .nav-logo {
@@ -111,11 +109,6 @@ body:hover .cursor-glow {
   letter-spacing: 6px;
   color: var(--white);
   transition: opacity 0.3s;
-}
-
-.nav-logo-img {
-  height: 32px;
-  width: auto;
 }
 
 .nav-logo:hover {
@@ -308,6 +301,12 @@ body:hover .cursor-glow {
   letter-spacing: 20px;
   line-height: 0.9;
   color: var(--white);
+  animation: titleReveal 1.2s var(--ease-out) 0.3s both;
+}
+
+.hero-logo {
+  width: clamp(280px, 50vw, 600px);
+  height: auto;
   animation: titleReveal 1.2s var(--ease-out) 0.3s both;
 }
 
