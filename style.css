@@ -310,7 +310,7 @@ body:hover .cursor-glow {
 }
 
 .hero-logo {
-  width: clamp(280px, 50vw, 600px);
+  width: clamp(200px, 35vw, 420px);
   height: auto;
   animation: titleReveal 1.2s var(--ease-out) 0.3s both;
 }
@@ -494,19 +494,29 @@ body:hover .cursor-glow {
   width: 100%;
   height: 500px;
   object-fit: cover;
-  filter: grayscale(30%);
+  filter: grayscale(20%) contrast(1.1) brightness(0.9);
   transition: filter 0.6s var(--ease), transform 0.6s var(--ease);
 }
 
 .split-image:hover img {
-  filter: grayscale(0%);
+  filter: grayscale(0%) contrast(1.1) brightness(0.95);
   transform: scale(1.03);
+}
+
+.split-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(10, 10, 10, 0.7) 100%);
+  pointer-events: none;
 }
 
 .split-image::after {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 2;
   border: 1px solid rgba(230, 57, 70, 0.2);
   pointer-events: none;
 }
