@@ -281,7 +281,7 @@ body:hover .cursor-glow {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.3) saturate(0.6);
+  filter: brightness(0.45) saturate(0.7);
   transform: scale(1.1);
   animation: heroZoom 20s var(--ease) forwards;
 }
@@ -294,6 +294,7 @@ body:hover .cursor-glow {
   position: relative;
   z-index: 2;
   text-align: center;
+  margin-top: -8vh;
 }
 
 .hero-title-wrap {
@@ -310,7 +311,7 @@ body:hover .cursor-glow {
 }
 
 .hero-logo {
-  width: clamp(200px, 35vw, 420px);
+  width: clamp(120px, 20vw, 250px);
   height: auto;
   animation: titleReveal 1.2s var(--ease-out) 0.3s both;
 }
