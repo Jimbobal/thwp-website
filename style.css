@@ -104,16 +104,11 @@ body:hover .cursor-glow {
 }
 
 .nav-logo {
-  display: flex;
-  align-items: center;
+  font-family: var(--font-display);
+  font-size: 28px;
+  letter-spacing: 6px;
+  color: var(--white);
   transition: opacity 0.3s;
-  flex-shrink: 0;
-}
-
-.nav-logo-img {
-  height: 32px;
-  width: auto;
-  display: block;
 }
 
 .nav-logo:hover {
@@ -306,6 +301,12 @@ body:hover .cursor-glow {
   letter-spacing: 20px;
   line-height: 0.9;
   color: var(--white);
+  animation: titleReveal 1.2s var(--ease-out) 0.3s both;
+}
+
+.hero-logo {
+  width: clamp(280px, 50vw, 600px);
+  height: auto;
   animation: titleReveal 1.2s var(--ease-out) 0.3s both;
 }
 
