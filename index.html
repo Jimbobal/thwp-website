@@ -3,339 +3,298 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>THWP | Rock Band</title>
-  <meta name="description" content="THWP - Original rock music. Listen to our latest tracks, watch videos, and get in touch for bookings.">
+  <title>THWP</title>
+  <meta name="description" content="THWP - Original rock music. Listen to our latest tracks, watch videos, and get in touch.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Cursor glow effect -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
   <!-- Navigation -->
   <nav id="navbar">
-    <div class="nav-container">
-      <a href="#home" class="nav-logo">THWP</a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#band">The Band</a></li>
-        <li><a href="#gallery">Photos</a></li>
-        <li><a href="#music">Music</a></li>
-        <li><a href="#videos">Videos</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <a href="#hero" class="nav-logo">THWP</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-links">
+      <a href="#about" data-nav>About</a>
+      <a href="#band" data-nav>Band</a>
+      <a href="#music" data-nav>Music</a>
+      <a href="#videos" data-nav>Videos</a>
+      <a href="#gallery" data-nav>Photos</a>
+      <a href="#contact" data-nav>Contact</a>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-bg" style="background-image: url('images/IMG_4798.jpeg')"></div>
-    <div class="hero-overlay"></div>
+  <!-- Full-screen overlay menu (mobile) -->
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-overlay-inner">
+      <a href="#about" class="menu-link">About</a>
+      <a href="#band" class="menu-link">Band</a>
+      <a href="#music" class="menu-link">Music</a>
+      <a href="#videos" class="menu-link">Videos</a>
+      <a href="#gallery" class="menu-link">Photos</a>
+      <a href="#contact" class="menu-link">Contact</a>
+    </div>
+    <div class="menu-overlay-socials">
+      <a href="https://www.instagram.com/thwpmusic/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/thwpmusic/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.youtube.com/@thwpmusic7276" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="hero-bg">
+      <img src="images/IMG_4798.jpeg" alt="" aria-hidden="true">
+    </div>
     <div class="hero-content">
-      <h1 class="hero-title">THWP</h1>
-      <p class="hero-tagline">Original Rock Music</p>
-      <div class="hero-cta">
-        <a href="#music" class="btn btn-primary">Listen Now</a>
-        <a href="#videos" class="btn btn-outline">Watch Us</a>
+      <div class="hero-title-wrap">
+        <h1 class="hero-title" data-reveal>THWP</h1>
       </div>
+      <p class="hero-sub" data-reveal>Original Rock</p>
+      <div class="hero-actions" data-reveal>
+        <a href="#music" class="btn-hero">Listen</a>
+        <a href="#videos" class="btn-hero btn-hero--outline">Watch</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- About -->
   <section id="about" class="section">
     <div class="container">
-      <h2 class="section-title">About</h2>
-      <div class="about-content">
-        <div class="about-text">
-          <p class="lead">THWP isn't your average rock band.</p>
-          <p>THWP brings a unique blend of original rock music that ranges from blistering anthems to surprisingly tender ballads. With raw energy, tight musicianship, and songs that stick with you long after the gig, this is a band that has to be seen to be believed.</p>
-          <p>With their debut EP <em>Whiskey Tea</em> (2017), the full-length <em>Puppetual Motion</em> (2022), and new albums on the way, THWP has carved out a niche that's entirely their own.</p>
+      <div class="split">
+        <div class="split-text">
+          <span class="label" data-reveal>About</span>
+          <h2 class="heading-lg" data-reveal>Not your average<br>rock band.</h2>
+          <p class="body-text" data-reveal>THWP brings a unique blend of original rock music that ranges from blistering anthems to surprisingly tender ballads. With raw energy, tight musicianship, and songs that stick with you long after the gig.</p>
+          <p class="body-text" data-reveal>From debut EP <em>Whiskey Tea</em> (2017) through the full-length <em>Puppetual Motion</em> (2022) to new albums on the way &mdash; THWP has carved out a niche that's entirely their own.</p>
         </div>
-        <div class="about-image">
+        <div class="split-image" data-reveal>
           <img src="images/IMG_4696.jpeg" alt="THWP band photo">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Band Members Section -->
-  <section id="band" class="section section-dark">
+  <!-- Band -->
+  <section id="band" class="section section--dark">
     <div class="container">
-      <h2 class="section-title">The Band</h2>
+      <span class="label" data-reveal>The Band</span>
+      <h2 class="heading-lg" data-reveal>Meet THWP</h2>
       <div class="band-grid">
-
-        <div class="member-card">
-          <div class="member-photo">
+        <div class="band-member" data-reveal>
+          <div class="band-member-img">
             <img src="images/IMG_0247.jpeg" alt="Harri">
           </div>
-          <div class="member-info">
-            <h3>Harri</h3>
-            <p class="member-role">Vocals</p>
-          </div>
+          <h3>Harri</h3>
+          <span class="member-role">Vocals</span>
         </div>
-
-        <div class="member-card">
-          <div class="member-photo">
+        <div class="band-member" data-reveal>
+          <div class="band-member-img">
             <img src="images/11440a54-e4a0-4868-9aa5-eb39f06c5ba0.jpeg" alt="James">
           </div>
-          <div class="member-info">
-            <h3>James</h3>
-            <p class="member-role">Bass</p>
-          </div>
+          <h3>James</h3>
+          <span class="member-role">Bass</span>
         </div>
-
-        <div class="member-card">
-          <div class="member-photo">
+        <div class="band-member" data-reveal>
+          <div class="band-member-img">
             <img src="images/IMG_1981.jpeg" alt="Andrew">
           </div>
-          <div class="member-info">
-            <h3>Andrew</h3>
-            <p class="member-role">Guitar</p>
-          </div>
+          <h3>Andrew</h3>
+          <span class="member-role">Guitar</span>
         </div>
-
-        <div class="member-card">
-          <div class="member-photo">
+        <div class="band-member" data-reveal>
+          <div class="band-member-img">
             <img src="images/IMG_1816.jpeg" alt="Dave">
           </div>
-          <div class="member-info">
-            <h3>Dave</h3>
-            <p class="member-role">Drums</p>
-          </div>
+          <h3>Dave</h3>
+          <span class="member-role">Drums</span>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Photo Gallery Section -->
+  <!-- Music -->
+  <section id="music" class="section">
+    <div class="container">
+      <span class="label" data-reveal>Discography</span>
+      <h2 class="heading-lg" data-reveal>Music</h2>
+
+      <!-- Featured release -->
+      <div class="release-featured" data-reveal>
+        <div class="release-featured-art">
+          <img src="images/lost-aidentity.jpg" alt="Lost (A)identity">
+        </div>
+        <div class="release-featured-info">
+          <span class="release-tag">Latest Single &mdash; 2024</span>
+          <h3 class="release-title">Lost (A)identity</h3>
+          <a href="https://music.apple.com/us/artist/thwp/1233988064" target="_blank" rel="noopener" class="btn-link">Apple Music &rarr;</a>
+          <a href="https://open.spotify.com/artist/5jiM5QHlaiyyqFqaNkLh2U" target="_blank" rel="noopener" class="btn-link">Spotify &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Albums grid -->
+      <div class="releases-grid">
+        <div class="release-card" data-reveal>
+          <div class="release-art"><img src="images/wee-hours.jpg" alt="The Wee Hours"></div>
+          <span class="release-tag">Coming Soon</span>
+          <h3>The Wee Hours</h3>
+          <ol class="tracklist">
+            <li>Nothing to Give</li>
+            <li>Head in the Screen</li>
+            <li>Escapology</li>
+            <li>In Cell</li>
+            <li>River Sleeps</li>
+            <li>Third Wind</li>
+            <li>Whisper</li>
+            <li>You and Me</li>
+          </ol>
+        </div>
+
+        <div class="release-card" data-reveal>
+          <div class="release-art"><img src="images/abandoned-gauntlet.jpg" alt="The Abandoned Gauntlet"></div>
+          <span class="release-tag">Coming Soon</span>
+          <h3>The Abandoned Gauntlet</h3>
+          <ol class="tracklist">
+            <li>Little Demon</li>
+            <li>Behind Glass</li>
+            <li>Bertha</li>
+            <li>Gauntlet</li>
+            <li>Break It Up</li>
+            <li>Undo</li>
+            <li>Underbelly</li>
+            <li>Pleasure</li>
+            <li>Slope</li>
+            <li>Brick By Brick</li>
+            <li>Clickbait</li>
+            <li>In The Night</li>
+          </ol>
+        </div>
+
+        <div class="release-card" data-reveal>
+          <div class="release-art"><img src="images/puppetual-motion.jpg" alt="Puppetual Motion"></div>
+          <span class="release-tag">Album &bull; 2022</span>
+          <h3>Puppetual Motion</h3>
+          <ol class="tracklist">
+            <li>Two Lives</li>
+            <li>Boom! Shake the Womb</li>
+            <li>Poundland</li>
+            <li>Piss on You</li>
+            <li>Sniffing the Promised Land</li>
+            <li>Shoppery</li>
+            <li>Smokey Blue</li>
+          </ol>
+          <a href="https://music.apple.com/us/artist/thwp/1233988064" target="_blank" rel="noopener" class="btn-link">Apple Music &rarr;</a>
+        </div>
+
+        <div class="release-card" data-reveal>
+          <div class="release-art"><img src="images/no-time-to-die.jpg" alt="No Time to Die"></div>
+          <span class="release-tag">Single &bull; 2021</span>
+          <h3>No Time to Die</h3>
+          <p class="release-desc">The Unofficial Bond Theme</p>
+          <a href="https://music.apple.com/us/artist/thwp/1233988064" target="_blank" rel="noopener" class="btn-link">Apple Music &rarr;</a>
+        </div>
+
+        <div class="release-card" data-reveal>
+          <div class="release-art"><img src="images/hello-christmas.jpg" alt="Hello Christmas"></div>
+          <span class="release-tag">Single &bull; 2019</span>
+          <h3>Hello Christmas</h3>
+          <p class="release-desc">(It Feels Like Christmas Time)</p>
+          <a href="https://music.apple.com/us/artist/thwp/1233988064" target="_blank" rel="noopener" class="btn-link">Apple Music &rarr;</a>
+        </div>
+
+        <div class="release-card" data-reveal>
+          <div class="release-art"><img src="images/whiskey-tea.jpg" alt="Whiskey Tea"></div>
+          <span class="release-tag">EP &bull; 2017</span>
+          <h3>Whiskey Tea</h3>
+          <a href="https://music.apple.com/us/artist/thwp/1233988064" target="_blank" rel="noopener" class="btn-link">Apple Music &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Videos -->
+  <section id="videos" class="section section--dark">
+    <div class="container">
+      <span class="label" data-reveal>Watch</span>
+      <h2 class="heading-lg" data-reveal>Videos</h2>
+      <div class="video-player" data-reveal>
+        <iframe
+          src="https://www.youtube.com/embed/IF3dwK05FdU"
+          title="THWP Video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-cta" data-reveal>
+        <a href="https://www.youtube.com/@thwpmusic7276" target="_blank" rel="noopener" class="btn-link">More on YouTube &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
   <section id="gallery" class="section">
     <div class="container">
-      <h2 class="section-title">Photos</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item gallery-wide">
-          <img src="images/IMG_4798.jpeg" alt="THWP performing live outdoors">
+      <span class="label" data-reveal>Gallery</span>
+      <h2 class="heading-lg" data-reveal>Photos</h2>
+      <div class="gallery-mosaic">
+        <div class="gallery-item gallery-item--wide" data-reveal>
+          <img src="images/IMG_4798.jpeg" alt="THWP performing live">
         </div>
-        <div class="gallery-item">
-          <img src="images/EACA58CF-F2AA-482A-93BE-3B7996A3BF41.jpeg" alt="James and Andrew">
+        <div class="gallery-item" data-reveal>
+          <img src="images/EACA58CF-F2AA-482A-93BE-3B7996A3BF41.jpeg" alt="Band members">
         </div>
-        <div class="gallery-item">
-          <img src="images/Human_Face_bday_mash_up.jpeg" alt="The band having fun">
+        <div class="gallery-item" data-reveal>
+          <img src="images/Human_Face_bday_mash_up.jpeg" alt="THWP having fun">
         </div>
-        <div class="gallery-item gallery-wide">
-          <img src="images/IMG_4696.jpeg" alt="Band selfie backstage">
+        <div class="gallery-item gallery-item--wide" data-reveal>
+          <img src="images/IMG_4696.jpeg" alt="Band selfie">
         </div>
-        <div class="gallery-item">
-          <img src="images/Jan 8 Screenshot.png" alt="THWP promo shot">
+        <div class="gallery-item" data-reveal>
+          <img src="images/Jan 8 Screenshot.png" alt="THWP promo">
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" data-reveal>
           <img src="images/band-xmas.jpg" alt="THWP Christmas">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Discography Section -->
-  <section id="music" class="section section-dark">
-    <div class="container">
-      <h2 class="section-title">Music</h2>
-
-      <!-- Featured / Latest -->
-      <div class="album-featured">
-        <div class="album-featured-inner">
-          <div class="album-art">
-            <img src="images/lost-aidentity.jpg" alt="Lost (A)identity artwork">
-          </div>
-          <div class="album-info">
-            <span class="album-badge">Latest Single</span>
-            <h3>Lost (A)identity</h3>
-            <p class="album-year">2024</p>
-            <div class="listen-links">
-              <a href="https://music.apple.com/us/artist/thwp/1233988064" target="_blank" rel="noopener" class="btn btn-sm">Apple Music</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Albums Grid -->
-      <div class="discography-grid">
-
-        <div class="album-card">
-          <div class="album-art">
-            <img src="images/wee-hours.jpg" alt="The Wee Hours album artwork">
-          </div>
-          <div class="album-info">
-            <span class="album-badge">Coming Soon</span>
-            <h3>The Wee Hours</h3>
-            <ol class="tracklist">
-              <li>Nothing to Give</li>
-              <li>Head in the Screen</li>
-              <li>Escapology</li>
-              <li>In Cell</li>
-              <li>River Sleeps</li>
-              <li>Third Wind</li>
-              <li>Whisper</li>
-              <li>You and Me</li>
-            </ol>
-          </div>
-        </div>
-
-        <div class="album-card">
-          <div class="album-art">
-            <img src="images/abandoned-gauntlet.jpg" alt="The Abandoned Gauntlet album artwork">
-          </div>
-          <div class="album-info">
-            <span class="album-badge">Coming Soon</span>
-            <h3>The Abandoned Gauntlet</h3>
-            <ol class="tracklist">
-              <li>Little Demon</li>
-              <li>Behind Glass</li>
-              <li>Bertha</li>
-              <li>Gauntlet</li>
-              <li>Break It Up</li>
-              <li>Undo</li>
-              <li>Underbelly</li>
-              <li>Pleasure</li>
-              <li>Slope</li>
-              <li>Brick By Brick</li>
-              <li>Clickbait</li>
-              <li>In The Night</li>
-            </ol>
-          </div>
-        </div>
-
-        <div class="album-card">
-          <div class="album-art">
-            <img src="images/puppetual-motion.jpg" alt="Puppetual Motion album artwork">
-          </div>
-          <div class="album-info">
-            <span class="album-badge">Album &bull; 2022</span>
-            <h3>Puppetual Motion</h3>
-            <ol class="tracklist">
-              <li>Two Lives</li>
-              <li>Boom! Shake the Womb</li>
-              <li>Poundland</li>
-              <li>Piss on You</li>
-              <li>Sniffing the Promised Land</li>
-              <li>Shoppery</li>
-              <li>Smokey Blue</li>
-            </ol>
-            <div class="listen-links">
-              <a href="https://music.apple.com/us/artist/thwp/1233988064" target="_blank" rel="noopener" class="btn btn-sm">Apple Music</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="album-card">
-          <div class="album-art">
-            <img src="images/no-time-to-die.jpg" alt="No Time to Die artwork">
-          </div>
-          <div class="album-info">
-            <span class="album-badge">Single &bull; 2021</span>
-            <h3>No Time to Die</h3>
-            <p class="album-desc">The Unofficial Bond Theme</p>
-            <div class="listen-links">
-              <a href="https://music.apple.com/us/artist/thwp/1233988064" target="_blank" rel="noopener" class="btn btn-sm">Apple Music</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="album-card">
-          <div class="album-art">
-            <img src="images/hello-christmas.jpg" alt="Hello Christmas artwork">
-          </div>
-          <div class="album-info">
-            <span class="album-badge">Single &bull; 2019</span>
-            <h3>Hello Christmas</h3>
-            <p class="album-desc">(It Feels Like Christmas Time)</p>
-            <div class="listen-links">
-              <a href="https://music.apple.com/us/artist/thwp/1233988064" target="_blank" rel="noopener" class="btn btn-sm">Apple Music</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="album-card">
-          <div class="album-art">
-            <img src="images/whiskey-tea.jpg" alt="Whiskey Tea EP artwork">
-          </div>
-          <div class="album-info">
-            <span class="album-badge">EP &bull; 2017</span>
-            <h3>Whiskey Tea</h3>
-            <div class="listen-links">
-              <a href="https://music.apple.com/us/artist/thwp/1233988064" target="_blank" rel="noopener" class="btn btn-sm">Apple Music</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Videos Section -->
-  <section id="videos" class="section">
-    <div class="container">
-      <h2 class="section-title">Videos</h2>
-      <div class="video-wrapper">
-        <div class="video-embed">
-          <iframe
-            src="https://www.youtube.com/embed/IF3dwK05FdU"
-            title="THWP Videos"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-      <div class="video-cta">
-        <a href="https://www.youtube.com/@thwpmusic7276" target="_blank" rel="noopener" class="btn btn-outline">
-          More on YouTube
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section section-dark">
-    <div class="container">
-      <h2 class="section-title">Get in Touch</h2>
-      <p class="section-subtitle">Bookings, press, or just want to say hello</p>
-      <div class="contact-content">
-        <div class="social-links">
-          <a href="https://www.youtube.com/@thwpmusic7276" target="_blank" rel="noopener" class="social-link">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#fff"/></svg>
-            <span>YouTube</span>
-          </a>
-          <a href="https://www.facebook.com/thwpmusic/" target="_blank" rel="noopener" class="social-link">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            <span>Facebook</span>
-          </a>
-          <a href="https://www.instagram.com/thwpmusic/" target="_blank" rel="noopener" class="social-link">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-            <span>Instagram</span>
-          </a>
-          <a href="https://music.apple.com/us/artist/thwp/1233988064" target="_blank" rel="noopener" class="social-link">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.994 6.124a9.23 9.23 0 0 0-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043A5.022 5.022 0 0 0 19.7.28a10.151 10.151 0 0 0-1.838-.122C17.043.089 16.225.064 15.407.064H8.593c-.818 0-1.636.025-2.453.094A10.15 10.15 0 0 0 4.3.28a5.022 5.022 0 0 0-1.874.611C1.308 1.604.563 2.604.246 3.914A9.23 9.23 0 0 0 .006 6.104c-.069.818-.094 1.636-.094 2.453v6.886c0 .818.025 1.636.094 2.453.057.74.163 1.47.24 2.19.317 1.31 1.062 2.31 2.18 3.043a5.022 5.022 0 0 0 1.874.611 10.15 10.15 0 0 0 1.838.122c.818.069 1.636.094 2.453.094h6.814c.818 0 1.636-.025 2.453-.094a10.15 10.15 0 0 0 1.838-.122 5.022 5.022 0 0 0 1.874-.611c1.118-.733 1.863-1.733 2.18-3.043.077-.72.183-1.45.24-2.19.069-.818.094-1.636.094-2.453V8.557c0-.818-.025-1.636-.094-2.453zM17.89 12.393l-.005 5.486a1.724 1.724 0 0 1-.233.868 1.437 1.437 0 0 1-.637.572c-.342.173-.703.27-1.08.27-.378 0-.738-.097-1.08-.27a1.437 1.437 0 0 1-.637-.572 1.724 1.724 0 0 1-.233-.868c0-.378.097-.738.27-1.08.173-.342.407-.616.71-.82.304-.205.637-.33.998-.377a4.16 4.16 0 0 0 .927-.205V10.51l-5.486 1.758v5.916a1.724 1.724 0 0 1-.233.868 1.437 1.437 0 0 1-.637.572c-.342.173-.703.27-1.08.27-.378 0-.738-.097-1.08-.27a1.437 1.437 0 0 1-.637-.572 1.724 1.724 0 0 1-.233-.868c0-.378.097-.738.27-1.08.173-.342.407-.616.71-.82.304-.205.637-.33.998-.377a4.16 4.16 0 0 0 .927-.205V8.81c0-.32.09-.615.268-.885a1.6 1.6 0 0 1 .688-.588l4.98-1.686c.377-.128.765-.13 1.163-.008.398.122.617.405.617.732z"/></svg>
-            <span>Apple Music</span>
-          </a>
-        </div>
-        <div class="contact-email-box">
-          <p>For bookings and enquiries:</p>
-          <a href="mailto:jamesgarner1976@gmail.com" class="email-link">jamesgarner1976@gmail.com</a>
-        </div>
+  <!-- Contact -->
+  <section id="contact" class="section section--dark">
+    <div class="container contact-container">
+      <span class="label" data-reveal>Contact</span>
+      <h2 class="heading-xl" data-reveal>Let's talk.</h2>
+      <p class="body-text" data-reveal>Bookings, press, or just want to say hello.</p>
+      <a href="mailto:jamesgarner1976@gmail.com" class="email-display" data-reveal>jamesgarner1976@gmail.com</a>
+      <div class="socials-row" data-reveal>
+        <a href="https://www.youtube.com/@thwpmusic7276" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.facebook.com/thwpmusic/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/thwpmusic/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://music.apple.com/us/artist/thwp/1233988064" target="_blank" rel="noopener">Apple Music</a>
+        <a href="https://open.spotify.com/artist/5jiM5QHlaiyyqFqaNkLh2U" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://soundcloud.com/thwp-music" target="_blank" rel="noopener">SoundCloud</a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <p class="footer-logo">THWP</p>
-      <p class="footer-copy">&copy; 2026 THWP. All rights reserved.</p>
+    <div class="container footer-inner">
+      <span class="footer-logo">THWP</span>
+      <span>&copy; 2026 THWP. All rights reserved.</span>
     </div>
   </footer>
 
