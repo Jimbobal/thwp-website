@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll(
-    '.about-text, .about-image, .member-card, .album-card, .album-featured-inner, .video-wrapper, .social-link, .contact-email-box'
+    '.about-text, .about-image, .member-card, .gallery-item, .album-card, .album-featured-inner, .video-wrapper, .social-link, .contact-email-box'
   ).forEach((el, i) => {
     el.classList.add('fade-in');
     el.style.transitionDelay = `${Math.min(i * 0.08, 0.5)}s`;
