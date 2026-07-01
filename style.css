@@ -919,6 +919,18 @@ body:hover .cursor-glow {
     align-items: center;
   }
 
+  /* Show the whole band on mobile instead of cropping into the centre */
+  .hero-bg {
+    background: var(--black);
+  }
+
+  .hero-bg img {
+    object-fit: contain;
+    object-position: center;
+    transform: none;
+    animation: none;
+  }
+
   .btn-hero {
     width: 200px;
     text-align: center;
