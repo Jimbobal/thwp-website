@@ -646,6 +646,13 @@ body:hover .cursor-glow {
   color: var(--accent);
 }
 
+.release-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 22px;
+  margin-top: 18px;
+}
+
 .releases-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -917,6 +924,18 @@ body:hover .cursor-glow {
   .hero-actions {
     flex-direction: column;
     align-items: center;
+  }
+
+  /* Show the whole band on mobile instead of cropping into the centre */
+  .hero-bg {
+    background: var(--black);
+  }
+
+  .hero-bg img {
+    object-fit: contain;
+    object-position: center;
+    transform: none;
+    animation: none;
   }
 
   .btn-hero {
