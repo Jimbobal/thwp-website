@@ -588,32 +588,6 @@ body:hover .cursor-glow {
 }
 
 /* ---------- Music / Releases ---------- */
-.release-featured {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-  margin-bottom: 80px;
-  padding: 40px;
-  background: var(--dark);
-  border: 1px solid rgba(255,255,255,0.05);
-}
-
-.release-featured-art {
-  overflow: hidden;
-}
-
-.release-featured-art img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  transition: transform 0.6s var(--ease);
-}
-
-.release-featured-art:hover img {
-  transform: scale(1.03);
-}
-
 .release-tag {
   font-size: 11px;
   letter-spacing: 3px;
@@ -621,13 +595,6 @@ body:hover .cursor-glow {
   color: var(--accent);
   display: block;
   margin-bottom: 12px;
-}
-
-.release-title {
-  font-family: var(--font-display);
-  font-size: clamp(36px, 5vw, 56px);
-  letter-spacing: 2px;
-  margin-bottom: 20px;
 }
 
 .btn-link {
@@ -881,12 +848,6 @@ body:hover .cursor-glow {
   .band-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
-  }
-
-  .release-featured {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    padding: 24px;
   }
 }
 
