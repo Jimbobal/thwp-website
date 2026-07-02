@@ -646,6 +646,13 @@ body:hover .cursor-glow {
   color: var(--accent);
 }
 
+.release-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 22px;
+  margin-top: 18px;
+}
+
 .releases-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
