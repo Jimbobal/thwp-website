@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lord of the Downs | THWP</title>
+  <meta name="description" content="Lord of the Downs — the new album from THWP. Coming soon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #0a0a0a;
+      --gold: #f2b632;
+      --gold-glow: rgba(242, 182, 50, 0.35);
+      --purple: #6b5b95;
+      --white: #f0f0f0;
+      --light-gray: #999;
+      --font-body: 'Space Grotesk', sans-serif;
+      --font-display: 'Bebas Neue', sans-serif;
+      --ease-out: cubic-bezier(0, 0, 0.15, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--black);
+      color: var(--white);
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* Cosmic backdrop */
+    .cosmos {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(107, 91, 149, 0.35), transparent 65%),
+        radial-gradient(ellipse 60% 40% at 15% 100%, rgba(30, 60, 40, 0.35), transparent 70%),
+        radial-gradient(ellipse 50% 40% at 85% 90%, rgba(90, 40, 90, 0.25), transparent 70%),
+        var(--black);
+    }
+
+    .cosmos::before,
+    .cosmos::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 12% 24%, #fff 50%, transparent 100%),
+        radial-gradient(1px 1px at 32% 68%, rgba(255,255,255,0.8) 50%, transparent 100%),
+        radial-gradient(2px 2px at 48% 12%, rgba(255,255,255,0.9) 50%, transparent 100%),
+        radial-gradient(1px 1px at 64% 42%, #fff 50%, transparent 100%),
+        radial-gradient(1px 1px at 78% 76%, rgba(255,255,255,0.7) 50%, transparent 100%),
+        radial-gradient(2px 2px at 88% 22%, rgba(255,255,255,0.85) 50%, transparent 100%),
+        radial-gradient(1px 1px at 6% 82%, rgba(255,255,255,0.75) 50%, transparent 100%),
+        radial-gradient(1px 1px at 55% 88%, #fff 50%, transparent 100%),
+        radial-gradient(1px 1px at 92% 58%, rgba(255,255,255,0.8) 50%, transparent 100%),
+        radial-gradient(1px 1px at 22% 48%, rgba(255,255,255,0.65) 50%, transparent 100%);
+      animation: twinkle 5s ease-in-out infinite;
+    }
+
+    .cosmos::after {
+      transform: scale(-1, 1);
+      animation-delay: 2.5s;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.9; }
+      50% { opacity: 0.35; }
+    }
+
+    /* Layout */
+    .page {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 96px 24px 64px;
+      gap: 32px;
+    }
+
+    .back-link {
+      position: fixed;
+      top: 24px;
+      left: clamp(24px, 5vw, 80px);
+      z-index: 10;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover {
+      color: var(--gold);
+    }
+
+    .band-name {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 3vw, 28px);
+      letter-spacing: 10px;
+      color: var(--light-gray);
+      animation: fadeUp 1s var(--ease-out) 0.1s both;
+    }
+
+    .album-title {
+      font-family: var(--font-display);
+      font-size: clamp(56px, 11vw, 130px);
+      letter-spacing: 6px;
+      line-height: 0.95;
+      color: var(--gold);
+      text-shadow: 0 0 60px var(--gold-glow);
+      animation: fadeUp 1s var(--ease-out) 0.25s both;
+    }
+
+    .album-art {
+      width: min(440px, 82vw);
+      animation: fadeUp 1.2s var(--ease-out) 0.4s both;
+    }
+
+    .album-art img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid rgba(242, 182, 50, 0.25);
+      box-shadow:
+        0 0 80px rgba(242, 182, 50, 0.18),
+        0 30px 80px rgba(0, 0, 0, 0.7);
+    }
+
+    .coming-soon {
+      display: inline-block;
+      font-size: clamp(13px, 1.8vw, 16px);
+      font-weight: 600;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: var(--white);
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+      padding: 14px 28px;
+      animation: fadeUp 1s var(--ease-out) 0.6s both, pulse 3s ease-in-out 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.55; }
+    }
+
+    .blurb {
+      max-width: 480px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--light-gray);
+      animation: fadeUp 1s var(--ease-out) 0.75s both;
+    }
+
+    .socials {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeUp 1s var(--ease-out) 0.9s both;
+    }
+
+    .socials a {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--light-gray);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .socials a:hover {
+      color: var(--gold);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cosmos" aria-hidden="true"></div>
+
+  <a href="index.html" class="back-link">&larr; THWP</a>
+
+  <main class="page">
+    <p class="band-name">THWP</p>
+    <h1 class="album-title">Lord of<br>the Downs</h1>
+    <div class="album-art">
+      <img src="images/lord-of-the-downs.jpg" alt="Lord of the Downs album artwork">
+    </div>
+    <p class="coming-soon">Coming Soon</p>
+    <p class="blurb">The new album from THWP. Follow us for the release date, first singles, and everything in between.</p>
+    <div class="socials">
+      <a href="https://www.youtube.com/@thwpmusic7276" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/thwpmusic/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/thwpmusic/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://open.spotify.com/artist/65eMh0pj3yKiutO0119P7q" target="_blank" rel="noopener">Spotify</a>
+      <a href="https://music.apple.com/us/artist/thwp/1233988064" target="_blank" rel="noopener">Apple Music</a>
+    </div>
+  </main>
+
+</body>
+</html>

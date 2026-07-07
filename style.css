@@ -638,6 +638,31 @@ body:hover .cursor-glow {
   transform: translateY(-4px);
 }
 
+.release-card--upcoming {
+  border-color: rgba(242, 182, 50, 0.35);
+}
+
+.release-card--upcoming:hover {
+  border-color: rgba(242, 182, 50, 0.7);
+  box-shadow: 0 0 40px rgba(242, 182, 50, 0.12);
+}
+
+.release-tag--gold {
+  color: #f2b632;
+}
+
+.release-card--upcoming .btn-link {
+  border-bottom-color: #f2b632;
+}
+
+.release-card--upcoming .btn-link:hover {
+  color: #f2b632;
+}
+
+.release-art-link {
+  display: block;
+}
+
 .release-art {
   overflow: hidden;
   margin-bottom: 20px;
